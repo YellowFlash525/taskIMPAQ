@@ -1,0 +1,41 @@
+/* Colors */
+
+$red: #f44336;
+$blue: #008CBA;
+$white: #FFFFFF;
+
+/* Mixins */
+
+@mixin buttons_comp($padding, $color) {
+  	border-color: $color;
+  	background-color: $color;
+  	padding: $padding $padding;
+}
+
+/* Table */
+
+th, td {
+	border: 1px solid #ddd;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Buttons */
+
+.button {
+	text-align: right;
+	border-radius: 2px;
+	text-decoration: none;
+	color: $white;
+}
+
+.button_all {
+	@include buttons_comp(6px, $blue);
+}
+
+.button__edit {
+	@include buttons_comp(5px, $blue);
+}
+.button__delete {
+	@include buttons_comp(5px, $red);
+}

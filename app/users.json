@@ -1,0 +1,25 @@
+[{
+	"name": "Joe",
+	"surname": "Doe",
+	"dateBirth": "24.03.2000",
+	"mobileNumber": 34425366,
+	"adress": "Poznan, Wolska 1"
+}, {
+	"name": "Joe",
+	"surname": "Doe",
+	"dateBirth": "24.03.2000",
+	"mobileNumber": 34425366,
+	"adress": "Poznan, Wolska 2"
+}, {
+	"name": "Joe",
+	"surname": "Doe",
+	"dateBirth": "24.03.2000",
+	"mobileNumber": 34425366,
+	"adress": "Poznan, Wolska 3"
+}, {
+	"name": "Joe",
+	"surname": "Doe",
+	"dateBirth": "24.03.2000",
+	"mobileNumber": 34425366,
+	"adress": "Poznan, Wolska 4"
+}]

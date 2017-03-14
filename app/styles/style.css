@@ -1,0 +1,29 @@
+/* Colors */
+/* Mixins */
+/* Table */
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 5px; }
+
+/* Buttons */
+.button {
+  text-align: right;
+  border-radius: 2px;
+  text-decoration: none;
+  color: #FFFFFF; }
+
+.button_all {
+  border-color: #008CBA;
+  background-color: #008CBA;
+  padding: 6px 6px; }
+
+.button__edit {
+  border-color: #008CBA;
+  background-color: #008CBA;
+  padding: 5px 5px; }
+
+.button__delete {
+  border-color: #f44336;
+  background-color: #f44336;
+  padding: 5px 5px; }
