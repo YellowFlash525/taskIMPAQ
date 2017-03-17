@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="app/styles/style.css">
 </head>
 <body ng-app="app">
-	<table ng-controller="UsersCtrl as vm">
+	<table ng-controller="UsersCtrl">
 		<tr>
 			<th></th>
 			<th>ID</th>
@@ -17,8 +17,8 @@
 			<th>mobile numer</th>
 			<th>adress(city + street + house number)</th>
 			<th>
-				<button type="button" class="button button_all" ng-hide="buttonSelected" ng-click="vm.editMultiUsers(); buttonSelected=true;">Edit Selected</button>
-				<button type="button" class="button button_all" ng-show="buttonSelected" ng-click="vm.updateMultiUsers(); buttonSelected=false;">Update Selected</button>
+				<button type="button" class="button button_all" ng-hide="buttonSelected" ng-click="editMultiUsers(); buttonSelected=true;">Edit Selected</button>
+				<button type="button" class="button button_all" ng-show="buttonSelected" ng-click="updateMultiUsers(); buttonSelected=false;">Update Selected</button>
 			</th>
 		</tr>
 		<tr ng-repeat="user in users track by $index">
@@ -57,13 +57,13 @@
 				</div>
 			</td>
 			<td>
-				<button type="button" class="button button__edit" ng-hide="buttonOne" ng-click="vm.editOneUser($index); buttonOne=true;">Edit</button>
-				<button type="button" class="button button__edit" ng-show="buttonOne" ng-click="vm.updateOneUser($index); buttonOne=false;">Update</button>
-				<button type="button" class="button button__delete" ng-click="vm.removeUser(user)">Delete</button>
+				<button type="button" class="button button__edit" ng-hide="buttonOne" ng-click="editOneUser($index); buttonOne=true;">Edit</button>
+				<button type="button" class="button button__edit" ng-show="buttonOne" ng-click="updateOneUser($index); buttonOne=false;">Update</button>
+				<button type="button" class="button button__delete" ng-click="removeUser(user)">Delete</button>
 			</td>
 		</tr>
 	</table>
 	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-	<script type="text/javascript" src="app/js/index.js"></script>
+	<script type="text/javascript" src="app/controllers/user-controller.js"></script>
 </body>
 </html>

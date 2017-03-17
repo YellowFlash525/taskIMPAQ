@@ -2,24 +2,28 @@
 var app = angular.module('app', []);
 	
 app.controller('UsersCtrl', function($scope, $http){
-	$http.get('app/users.json').then(function (response){
+	$http.get('app/users.json').then(function SuccesCallback(response){
 		$scope.users = response.data;
-	});
+	}, function ErrorCalback(response){
+        throw new Error('Something was wrong')
+    });
 
-	this.removeUser = function(user) {
+    $scope.data = "ala";
+
+	$scope.removeUser = function(user) {
         var index = $scope.users.indexOf(user);
         $scope.users.splice(index, 1);
     };
 
-    this.editOneUser = function(user){
+    $scope.editOneUser = function(user){
         $scope.users[user].editable = true;
     };
 
-    this.updateOneUser = function(user){
+    $scope.updateOneUser = function(user){
         $scope.users[user].editable = false;
     };
 
-    this.editMultiUsers = function() {
+    $scope.editMultiUsers = function() {
     	angular.forEach($scope.users, function(value, key) {
             if($scope.users[key].selected){
                 $scope.users[key].editable = true;
@@ -28,10 +32,14 @@ app.controller('UsersCtrl', function($scope, $http){
         });    			
     };
     
-    this.updateMultiUsers = function() {
+    $scope.updateMultiUsers = function() {
         angular.forEach($scope.users, function(value, key) {
             if($scope.users[key].editable){
                 $scope.users[key].editable = false;
+                $scope.users[key].selected = false;
+            }
+            else {
+                $scope.users[key].selected = false;
             }
         });
     };

@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/YellowFlash525/taskIMPAQ#readme",
   "dependencies": {
-    "jasmine": "^2.5.3",
     "angular": "^1.6.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "angular-mocks": "^1.6.3"
   },
 }
