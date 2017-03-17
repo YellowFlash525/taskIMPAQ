@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="app/styles/style.css">
 </head>
 <body ng-app="app">
-	<table ng-controller="UsersCtrl">
+	<table ng-controller="UsersCtrl as vm">
 		<tr>
 			<th></th>
 			<th>ID</th>
@@ -17,22 +17,49 @@
 			<th>mobile numer</th>
 			<th>adress(city + street + house number)</th>
 			<th>
-				<button type="button" class="button button_all">Edit Selected</button>
+				<button type="button" class="button button_all" ng-hide="buttonSelected" ng-click="vm.editMultiUsers(); buttonSelected=true;">Edit Selected</button>
+				<button type="button" class="button button_all" ng-show="buttonSelected" ng-click="vm.updateMultiUsers(); buttonSelected=false;">Update Selected</button>
 			</th>
 		</tr>
-		<tr ng-repeat="user in users">
+		<tr ng-repeat="user in users track by $index">
 			<td>
-				<input type="checkbox" name="check">
+				<input type="checkbox" name="check" ng-model="user.selected">
 			</td>
-			<td>1</td>
-			<td>{{user.name}}</td>
-			<td>{{user.surname}}</td>
-			<td>{{user.dateBirth}}</td>
-			<td>{{user.mobileNumber}}</td>
-			<td>{{user.adress}}</td>
+			<td>{{$index+1}}</td>
 			<td>
-				<button type="button" class="button button__edit">Edit</button>
-				<button type="button" class="button button__delete">Delete</button>
+				<div ng-hide="user.editable"> {{user.name}} </div>
+				<div ng-show="user.editable">
+					<input class="myInput" type="text" name="name" ng-model="user.name">
+				</div>
+			</td1>
+			<td>
+				<div ng-hide="user.editable"> {{user.surname}} </div>
+				<div ng-show="user.editable">
+					<input class="myInput" type="text" name="surname" ng-model="user.surname">
+				</div>
+			</td>
+			<td>
+				<div ng-hide="user.editable"> {{user.dateBirth}} </div>
+				<div ng-show="user.editable">
+					<input class="myInput" type="text" name="dateBirth" ng-model="user.dateBirth">
+				</div>
+			</td>
+			<td>
+				<div ng-hide="user.editable"> {{user.mobileNumber}} </div>
+				<div ng-show="user.editable">
+					<input class="myInput" type="text" name="mobileNumber" ng-model="user.mobileNumber">
+				</div>
+			</td>
+			<td>
+				<div ng-hide="user.editable"> {{user.adress}} </div>
+				<div ng-show="user.editable">
+					<input class="myInput" type="text" name="adress" ng-model="user.adress">
+				</div>
+			</td>
+			<td>
+				<button type="button" class="button button__edit" ng-hide="buttonOne" ng-click="vm.editOneUser($index); buttonOne=true;">Edit</button>
+				<button type="button" class="button button__edit" ng-show="buttonOne" ng-click="vm.updateOneUser($index); buttonOne=false;">Update</button>
+				<button type="button" class="button button__delete" ng-click="vm.removeUser(user)">Delete</button>
 			</td>
 		</tr>
 	</table>

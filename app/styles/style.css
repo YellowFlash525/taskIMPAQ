@@ -6,12 +6,16 @@ th, td {
   text-align: center;
   padding: 5px; }
 
+.myInput {
+  width: 120px; }
+
 /* Buttons */
 .button {
   text-align: right;
   border-radius: 2px;
   text-decoration: none;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  cursor: pointer; }
 
 .button_all {
   border-color: #008CBA;

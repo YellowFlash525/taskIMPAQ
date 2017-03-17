@@ -20,6 +20,10 @@ th, td {
     padding: 5px;
 }
 
+.myInput {
+	width: 100px;
+}
+
 /* Buttons */
 
 .button {
@@ -27,6 +31,7 @@ th, td {
 	border-radius: 2px;
 	text-decoration: none;
 	color: $white;
+	cursor: pointer;
 }
 
 .button_all {
