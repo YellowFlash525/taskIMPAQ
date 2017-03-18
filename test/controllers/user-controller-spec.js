@@ -16,6 +16,45 @@ describe('UsersController', function() {
 		$httpBackend = _$httpBackend_;
 	}));
 
+	it('load data from json file', function() {
+		$httpBackend.expectGET('app/users.json').respond([{
+			"name": "Joe",
+			"surname": "Doe",
+			"dateBirth": "24.03.2000",
+			"mobileNumber": 34425366,
+			"adress": "Poznan, Wolska 1",
+			"selected": false,
+			"editable": false
+		}, {
+			"name": "Joe",
+			"surname": "Doe",
+			"dateBirth": "24.03.2000",
+			"mobileNumber": 34425366,
+			"adress": "Poznan, Wolska 2",
+			"selected": false,
+			"editable": false
+		}, {
+			"name": "Joe",
+			"surname": "Doe",
+			"dateBirth": "24.03.2000",
+			"mobileNumber": 34425366,
+			"adress": "Poznan, Wolska 3",
+			"selected": false,
+			"editable": false
+		}, {
+			"name": "Joe",
+			"surname": "Doe",
+			"dateBirth": "24.03.2000",
+			"mobileNumber": 34425366,
+			"adress": "Poznan, Wolska 4",
+			"selected": false,
+			"editable": false
+		}]);
+		$httpBackend.flush();
+		expect(scope.users[1].name).toEqual("Joe");
+		expect(scope.users[1].adress).toEqual("Poznan, Wolska 2");
+	});
+
 	it('deleteUser', function() {
 		scope.users = [{
 			"name": "Joe",
@@ -133,44 +172,5 @@ describe('UsersController', function() {
 			expect(scope.users[1].selected).toBe(false);
 			expect(scope.users[1].editable).toBe(false);
 		});
-	});
-
-	it('load data from json file', function() {
-		$httpBackend.expectGET('app/users.json').respond([{
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 1",
-			"selected": false,
-			"editable": false
-		}, {
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 2",
-			"selected": false,
-			"editable": false
-		}, {
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 3",
-			"selected": false,
-			"editable": false
-		}, {
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 4",
-			"selected": false,
-			"editable": false
-		}]);
-		$httpBackend.flush();
-		expect(scope.users[1].name).toEqual("Joe");
-		expect(scope.users[1].adress).toEqual("Poznan, Wolska 2");
 	});
 });
