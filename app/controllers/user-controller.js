@@ -27,7 +27,6 @@ app.controller('UsersCtrl', function($scope, $http){
     	angular.forEach($scope.users, function(value, key) {
             if($scope.users[key].selected){
                 $scope.users[key].editable = true;
-                $scope.users[key].selected = false;
             }
         });    			
     };
@@ -36,9 +35,6 @@ app.controller('UsersCtrl', function($scope, $http){
         angular.forEach($scope.users, function(value, key) {
             if($scope.users[key].editable){
                 $scope.users[key].editable = false;
-                $scope.users[key].selected = false;
-            }
-            else {
                 $scope.users[key].selected = false;
             }
         });

@@ -69,7 +69,7 @@ describe('UsersController', function() {
 			"mobileNumber": 34425366,
 			"adress": "Poznan, Wolska 1",
 			"selected": false,
-			"editable": false
+			"editable": true
 		}, {
 			"name": "Joe",
 			"surname": "Doe",
@@ -84,17 +84,54 @@ describe('UsersController', function() {
 	});
 
 	describe('editMultiUsers', function() {
-		it('if selected flag is true', function() {
-
-		});
-		it('if selected flag is false', function() {
-			
+		it('if user is selected', function() {
+			scope.users = [{
+				"name": "Joe",
+				"surname": "Doe",
+				"dateBirth": "24.03.2000",
+				"mobileNumber": 34425366,
+				"adress": "Poznan, Wolska 1",
+				"selected": true,
+				"editable": false
+			}, {
+				"name": "Joe",
+				"surname": "Doe",
+				"dateBirth": "24.03.2000",
+				"mobileNumber": 34425366,
+				"adress": "Poznan, Wolska 2",
+				"selected": true,
+				"editable": false
+			}];
+			scope.editMultiUsers();
+			expect(scope.users[0].editable).toBe(true);
+			expect(scope.users[1].editable).toBe(true);
 		});
 	});
 
 	describe('updateMultiUsers', function() {
-		it('if selected flag is true', function() {
-
+		it('if user is editable', function() {
+			scope.users = [{
+				"name": "Joe",
+				"surname": "Doe",
+				"dateBirth": "24.03.2000",
+				"mobileNumber": 34425366,
+				"adress": "Poznan, Wolska 1",
+				"selected": true,
+				"editable": true
+			}, {
+				"name": "Joe",
+				"surname": "Doe",
+				"dateBirth": "24.03.2000",
+				"mobileNumber": 34425366,
+				"adress": "Poznan, Wolska 2",
+				"selected": true,
+				"editable": true
+			}];
+			scope.updateMultiUsers();
+			expect(scope.users[0].selected).toBe(false);
+			expect(scope.users[0].editable).toBe(false);
+			expect(scope.users[1].selected).toBe(false);
+			expect(scope.users[1].editable).toBe(false);
 		});
 	});
 
