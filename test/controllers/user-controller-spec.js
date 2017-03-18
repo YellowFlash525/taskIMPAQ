@@ -18,61 +18,61 @@ describe('UsersController', function() {
 
 	it('load data from json file', function() {
 		$httpBackend.expectGET('app/users.json').respond([{
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 1",
+			"name": "Camile",
+			"surname": "Smith",
+			"dateBirth": "24.09.1995",
+			"mobileNumber": 111111111,
+			"adress": "Poznan, Strzelecka 1",
 			"selected": false,
 			"editable": false
 		}, {
-			"name": "Joe",
+			"name": "Anna",
 			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 2",
+			"dateBirth": "18.03.1990",
+			"mobileNumber": 456123890,
+			"adress": "Warszawa, Wolska 2",
 			"selected": false,
 			"editable": false
 		}, {
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 3",
+			"name": "Tom",
+			"surname": "Owen",
+			"dateBirth": "02.01.2000",
+			"mobileNumber": 344253665,
+			"adress": "Kalisz, Zwyciestwa 3",
 			"selected": false,
 			"editable": false
 		}, {
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 4",
+			"name": "Jerry",
+			"surname": "Duke",
+			"dateBirth": "24.03.1999",
+			"mobileNumber": 321432543,
+			"adress": "Złotów, Paderewskiego 5",
 			"selected": false,
 			"editable": false
 		}]);
 		$httpBackend.flush();
-		expect(scope.users[1].name).toEqual("Joe");
-		expect(scope.users[1].adress).toEqual("Poznan, Wolska 2");
+		expect(scope.users[1].name).toEqual("Anna");
+		expect(scope.users[1].adress).toEqual("Warszawa, Wolska 2");
 	});
 
 	it('deleteUser', function() {
 		scope.users = [{
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 1",
+			"name": "Camile",
+			"surname": "Smith",
+			"dateBirth": "24.09.1995",
+			"mobileNumber": 111111111,
+			"adress": "Poznan, Strzelecka 1",
 			"selected": false,
-			"editable": false
+			"editable": true
 		}, {
-			"name": "Joe",
+			"name": "Anna",
 			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 2",
+			"dateBirth": "18.03.1990",
+			"mobileNumber": 456123890,
+			"adress": "Warszawa, Wolska 2",
 			"selected": false,
-			"editable": false
-		}]
+			"editable": true
+		}];
 		scope.removeUser(1);
 		scope.removeUser(2);
 		expect(scope.users.length).toBe(0);
@@ -80,44 +80,44 @@ describe('UsersController', function() {
 
 	it('editOneUser', function() {
 		scope.users = [{
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 1",
+			"name": "Camile",
+			"surname": "Smith",
+			"dateBirth": "24.09.1995",
+			"mobileNumber": 111111111,
+			"adress": "Poznan, Strzelecka 1",
 			"selected": false,
 			"editable": false
 		}, {
-			"name": "Joe",
+			"name": "Anna",
 			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 2",
+			"dateBirth": "18.03.1990",
+			"mobileNumber": 456123890,
+			"adress": "Warszawa, Wolska 2",
 			"selected": false,
 			"editable": false
-		}]
+		}];
 		scope.editOneUser(1);
 		expect(scope.users[1].editable).toBe(true);
 	});
 
 	it('updateOneUser', function() {
 		scope.users = [{
-			"name": "Joe",
-			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 1",
+			"name": "Camile",
+			"surname": "Smith",
+			"dateBirth": "24.09.1995",
+			"mobileNumber": 111111111,
+			"adress": "Poznan, Strzelecka 1",
 			"selected": false,
 			"editable": true
 		}, {
-			"name": "Joe",
+			"name": "Anna",
 			"surname": "Doe",
-			"dateBirth": "24.03.2000",
-			"mobileNumber": 34425366,
-			"adress": "Poznan, Wolska 2",
+			"dateBirth": "18.03.1990",
+			"mobileNumber": 456123890,
+			"adress": "Warszawa, Wolska 2",
 			"selected": false,
 			"editable": true
-		}]
+		}];
 		scope.updateOneUser(1);
 		expect(scope.users[1].editable).toBe(false);
 	});
@@ -125,19 +125,19 @@ describe('UsersController', function() {
 	describe('editMultiUsers', function() {
 		it('if user is selected', function() {
 			scope.users = [{
-				"name": "Joe",
-				"surname": "Doe",
-				"dateBirth": "24.03.2000",
-				"mobileNumber": 34425366,
-				"adress": "Poznan, Wolska 1",
+				"name": "Camile",
+				"surname": "Smith",
+				"dateBirth": "24.09.1995",
+				"mobileNumber": 111111111,
+				"adress": "Poznan, Strzelecka 1",
 				"selected": true,
 				"editable": false
 			}, {
-				"name": "Joe",
+				"name": "Anna",
 				"surname": "Doe",
-				"dateBirth": "24.03.2000",
-				"mobileNumber": 34425366,
-				"adress": "Poznan, Wolska 2",
+				"dateBirth": "18.03.1990",
+				"mobileNumber": 456123890,
+				"adress": "Warszawa, Wolska 2",
 				"selected": true,
 				"editable": false
 			}];
@@ -150,19 +150,19 @@ describe('UsersController', function() {
 	describe('updateMultiUsers', function() {
 		it('if user is editable', function() {
 			scope.users = [{
-				"name": "Joe",
-				"surname": "Doe",
-				"dateBirth": "24.03.2000",
-				"mobileNumber": 34425366,
-				"adress": "Poznan, Wolska 1",
+				"name": "Camile",
+				"surname": "Smith",
+				"dateBirth": "24.09.1995",
+				"mobileNumber": 111111111,
+				"adress": "Poznan, Strzelecka 1",
 				"selected": true,
 				"editable": true
 			}, {
-				"name": "Joe",
+				"name": "Anna",
 				"surname": "Doe",
-				"dateBirth": "24.03.2000",
-				"mobileNumber": 34425366,
-				"adress": "Poznan, Wolska 2",
+				"dateBirth": "18.03.1990",
+				"mobileNumber": 456123890,
+				"adress": "Warszawa, Wolska 2",
 				"selected": true,
 				"editable": true
 			}];
