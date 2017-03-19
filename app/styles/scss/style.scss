@@ -21,7 +21,19 @@ th, td {
 }
 
 .myInput {
-	width: 100px;
+	width: 85px;
+}
+
+.myInputcity {
+	width: 75px;
+}
+
+.myInputstreet {
+	width: 75px;
+}
+
+.myInputnumber {
+	width: 30px;
 }
 
 /* Buttons */
@@ -34,7 +46,7 @@ th, td {
 	cursor: pointer;
 }
 
-.button_all {
+.button__all {
 	@include buttons_comp(6px, $blue);
 }
 

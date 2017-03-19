@@ -5,10 +5,8 @@ app.controller('UsersCtrl', function($scope, $http){
 	$http.get('app/users.json').then(function SuccesCallback(response){
 		$scope.users = response.data;
 	}, function ErrorCalback(response){
-        throw new Error('Something was wrong')
+        throw new Error('Something was wrong');
     });
-
-    $scope.data = "ala";
 
 	$scope.removeUser = function(user) {
         var index = $scope.users.indexOf(user);

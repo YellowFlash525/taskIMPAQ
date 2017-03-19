@@ -3,7 +3,11 @@
 	"surname": "Smith",
 	"dateBirth": "24.09.1995",
 	"mobileNumber": 111111111,
-	"adress": "Poznan, Strzelecka 1",
+	"adress": {
+		"city": "Poznań",
+		"street": "Strzelecka",
+		"houseNumber": 1
+	},
 	"selected": false,
 	"editable": false
 }, {
@@ -11,7 +15,11 @@
 	"surname": "Doe",
 	"dateBirth": "18.03.1990",
 	"mobileNumber": 456123890,
-	"adress": "Warszawa, Wolska 2",
+	"adress": {
+		"city": "Warszawa",
+		"street": "Wolska",
+		"houseNumber": 2
+	},
 	"selected": false,
 	"editable": false
 }, {
@@ -19,7 +27,11 @@
 	"surname": "Owen",
 	"dateBirth": "02.01.2000",
 	"mobileNumber": 344253665,
-	"adress": "Kalisz, Zwyciestwa 3",
+	"adress": {
+		"city": "Kalisz",
+		"street": "Zwyciestwa",
+		"houseNumber": 3
+	},
 	"selected": false,
 	"editable": false
 }, {
@@ -27,7 +39,11 @@
 	"surname": "Duke",
 	"dateBirth": "24.03.1999",
 	"mobileNumber": 321432543,
-	"adress": "Złotów, Paderewskiego 5",
+	"adress": {
+		"city": "Złotów",
+		"street": "Paderewskiego",
+		"houseNumber": 5
+	},
 	"selected": false,
 	"editable": false
 }]

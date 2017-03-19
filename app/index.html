@@ -17,8 +17,8 @@
 			<th>mobile numer</th>
 			<th>adress(city + street + house number)</th>
 			<th>
-				<button type="button" class="button button_all" ng-hide="buttonSelected" ng-click="editMultiUsers(); buttonSelected=true;">Edit Selected</button>
-				<button type="button" class="button button_all" ng-show="buttonSelected" ng-click="updateMultiUsers(); buttonSelected=false;">Update Selected</button>
+				<button type="button" class="button button__all" ng-hide="buttonSelected" ng-click="editMultiUsers(); buttonSelected=true;">Edit Selected</button>
+				<button type="button" class="button button__all" ng-show="buttonSelected" ng-click="updateMultiUsers(); buttonSelected=false;">Update Selected</button>
 			</th>
 		</tr>
 		<tr ng-repeat="user in users track by $index">
@@ -47,13 +47,15 @@
 			<td>
 				<div ng-hide="user.editable"> {{user.mobileNumber}} </div>
 				<div ng-show="user.editable">
-					<input class="myInput" type="text" name="mobileNumber" ng-model="user.mobileNumber">
+					<input class="myInput" type="number" name="mobileNumber" ng-model="user.mobileNumber">
 				</div>
 			</td>
 			<td>
-				<div ng-hide="user.editable"> {{user.adress}} </div>
+				<div ng-hide="user.editable"> {{user.adress.city}}, {{user.adress.street}} {{user.adress.houseNumber}} </div>
 				<div ng-show="user.editable">
-					<input class="myInput" type="text" name="adress" ng-model="user.adress">
+					<input class="myInputcity" type="text" name="adress" ng-model="user.adress.city">
+					<input class="myInputstreet" type="text" name="adress" ng-model="user.adress.street">
+					<input class="myInputnumber" type="number" name="adress" ng-model="user.adress.houseNumber">
 				</div>
 			</td>
 			<td>
@@ -64,6 +66,7 @@
 		</tr>
 	</table>
 	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="node_modules/angular-mocks/angular-mocks.js"></script>
 	<script type="text/javascript" src="app/controllers/user-controller.js"></script>
 </body>
 </html>
